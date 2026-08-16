@@ -8,26 +8,22 @@ int main()
     cout << "Enter the number of elements: ";
     cin >> n;
 
-    int *arr = new int[n];
+    float *arr = new float[n];
 
-    cout << "Enter " << n << " elements:" << endl;
+    float sum = 0;
+
+    cout << "Enter " << n << " floating-point numbers:" << endl;
 
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
+        sum = sum + arr[i];
     }
 
-    int largest = arr[0];
+    float average = sum / n;
 
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[i] > largest)
-        {
-            largest = arr[i];
-        }
-    }
-
-    cout << "Largest element = " << largest << endl;
+    cout << "Sum = " << sum << endl;
+    cout << "Average = " << average << endl;
 
     delete[] arr;
 
